@@ -66,7 +66,7 @@ class SumAggregator(Aggregator):
 
         with tf.variable_scope(self.name):
             self.weights = tf.get_variable(
-                shape=[self.dim, self.dim], initializer=tf.contrib.layers.xavier_initializer(), name='weights')
+                shape=[self.dim, self.dim], initializer=tf.keras.layers.xavier_initializer(), name='weights')
             self.bias = tf.get_variable(shape=[self.dim], initializer=tf.zeros_initializer(), name='bias')
 
     def _call(self, self_vectors, neighbor_vectors, neighbor_relations, user_embeddings, masks):
